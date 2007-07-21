@@ -1,8 +1,9 @@
-%define version 0.9.5
+%define version 0.9.6
 %define release %mkrel 1
 
 %define major 0
 %define libname %mklibname otf %{major}
+%define develname %mklibname -d otf
 
 Name:           libotf
 Summary:        Library for handling OpenType fonts
@@ -44,13 +45,14 @@ Provides:	%{name} = %{version}-%{release}
 %description -n	%{libname}
 Libotf library.
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Development files for %{name}
 Group:		Development/C
 Requires:	%{libname} = %{version}
 Provides:	%{name}-devel = %{version}-%{release}
+Obsoletes:	%{libname}-devel
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 Headers of %{name} for development.
 
 %prep
@@ -80,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING
 %{_libdir}/lib*.so.*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog NEWS README
 %{_bindir}/libotf-config
@@ -89,5 +91,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.a
 %{_libdir}/lib*.la
 %{_libdir}/pkgconfig/lib*.pc
-
-
