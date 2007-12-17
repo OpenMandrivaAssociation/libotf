@@ -13,7 +13,6 @@ Group:		System/Internationalization
 License:	LGPL
 URL:		http://www.m17n.org/libotf/
 Source0:	http://www.m17n.org/libotf/%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	freetype2-devel
 BuildRequires:	X11-devel
 
