@@ -1,5 +1,5 @@
-%define version 0.9.7
-%define release %mkrel 2
+%define version 0.9.8
+%define release %mkrel 1
 
 %define major 0
 %define libname %mklibname otf %{major}
