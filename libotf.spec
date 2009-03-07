@@ -1,4 +1,4 @@
-%define version 0.9.8
+%define version 0.9.9
 %define release %mkrel 1
 
 %define major 0
@@ -10,12 +10,14 @@ Summary:        Library for handling OpenType fonts
 Version:        %{version}
 Release:        %{release}
 Group:		System/Internationalization
-License:	LGPL
+License:	LGPLv2+
 URL:		http://www.m17n.org/libotf/
-Source0:	http://www.m17n.org/libotf/%{name}-%{version}.tar.bz2
+Source0:	http://www.m17n.org/libotf/%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	freetype2-devel
-BuildRequires:	X11-devel
+BuildRequires:	libx11-devel
+BuildRequires:	libxaw-devel
+BuildRequires:	libxt-devel
 
 %description
 The library "libotf" provides the following facilites:
@@ -26,7 +28,6 @@ The library "libotf" provides the following facilites:
 
 The combination of libotf and the FreeType library realizes CTL (Complex Text
 Layout) by OpenType fonts.*
-
 
 %package	tools
 Summary:	Utilities of OpenType library
@@ -50,7 +51,7 @@ Summary:	Development files for %{name}
 Group:		Development/C
 Requires:	%{libname} = %{version}
 Provides:	%{name}-devel = %{version}-%{release}
-Obsoletes:	%{libname}-devel
+Obsoletes:	%{_lib}otf0-devel
 
 %description -n	%{develname}
 Headers of %{name} for development.
@@ -84,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n %{libname}
 %defattr(-,root,root)
 %doc COPYING
-%{_libdir}/lib*.so.*
+%{_libdir}/lib*.so.%{major}*
 
 %files -n %{develname}
 %defattr(-,root,root)
