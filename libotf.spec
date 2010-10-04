@@ -1,5 +1,5 @@
 %define version 0.9.12
-%define release %mkrel -c RC 1
+%define release %mkrel 1
 
 %define major 0
 %define libname %mklibname otf %{major}
@@ -12,7 +12,7 @@ Release:        %{release}
 Group:		System/Internationalization
 License:	LGPLv2+
 URL:		http://www.m17n.org/libotf/
-Source0:	http://www.m17n.org/libotf/%{name}-%{version}RC.tar.gz
+Source0:	http://www.m17n.org/libotf/%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	freetype2-devel
 BuildRequires:	libx11-devel
@@ -57,7 +57,7 @@ Obsoletes:	%{_lib}otf0-devel
 Headers of %{name} for development.
 
 %prep
-%setup -qn %{name}-%{version}RC
+%setup -qn %{name}-%{version}
 
 %build
 %configure2_5x
