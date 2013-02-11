@@ -13,7 +13,7 @@ Group:		System/Internationalization
 License:	LGPLv2+
 URL:		http://www.m17n.org/libotf/
 Source0:	http://www.m17n.org/libotf/%{name}-%{version}.tar.gz
-BuildRequires:	freetype2-devel
+BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xaw7)
 BuildRequires:	pkgconfig(xt)
@@ -81,6 +81,7 @@ Headers of %{name} for development.
 
 %changelog
 * Mon Feb 11 2013 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.9.12-3
+- fix freetype build dependency
 - cleanups
 
 * Fri Apr 29 2011 Oden Eriksson <oeriksson@mandriva.com> 0.9.12-2mdv2011.0
