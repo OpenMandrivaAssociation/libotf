@@ -1,22 +1,22 @@
-%define version 0.9.12
+%define version 0.9.1
 %define release 3
 
-%define major 0
-%define libname %mklibname otf %{major}
-%define develname %mklibname -d otf
+%define	major	0
+%define	libname %mklibname otf %{major}
+%define	devname %mklibname -d otf
 
 Name:           libotf
 Summary:        Library for handling OpenType fonts
-Version:        %{version}
-Release:        %{release}
+Version:        0.9.1
+Release:        3
 Group:		System/Internationalization
 License:	LGPLv2+
 URL:		http://www.m17n.org/libotf/
 Source0:	http://www.m17n.org/libotf/%{name}-%{version}.tar.gz
 BuildRequires:	freetype2-devel
-BuildRequires:	libx11-devel
-BuildRequires:	libxaw-devel
-BuildRequires:	libxt-devel
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(xaw7)
+BuildRequires:	pkgconfig(xt)
 
 %description
 The library "libotf" provides the following facilites:
@@ -45,18 +45,18 @@ Provides:	%{name} = %{version}-%{release}
 %description -n	%{libname}
 Libotf library.
 
-%package -n	%{develname}
+%package -n	%{devname}
 Summary:	Development files for %{name}
 Group:		Development/C
 Requires:	%{libname} = %{version}
 Provides:	%{name}-devel = %{version}-%{release}
 Obsoletes:	%{_lib}otf0-devel
 
-%description -n	%{develname}
+%description -n	%{devname}
 Headers of %{name} for development.
 
 %prep
-%setup -qn %{name}-%{version}
+%setup -q
 
 %build
 %configure2_5x
@@ -65,36 +65,24 @@ Headers of %{name} for development.
 %install
 %makeinstall_std
 
-%clean
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
 %files tools
-%defattr(-,root,root)
-%doc COPYING
 %{_bindir}/otf*
 
 %files -n %{libname}
-%defattr(-,root,root)
-%doc COPYING
 %{_libdir}/lib*.so.%{major}*
 
-%files -n %{develname}
-%defattr(-,root,root)
-%doc AUTHORS COPYING ChangeLog NEWS README
+%files -n %{devname}
+%doc AUTHORS ChangeLog NEWS README
 %{_bindir}/libotf-config
 %{_includedir}/*
 %{_libdir}/lib*.so
 %{_libdir}/lib*.a
 %{_libdir}/pkgconfig/lib*.pc
 
-
 %changelog
+* Mon Feb 11 2013 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.9.12-3
+- cleanups
+
 * Fri Apr 29 2011 Oden Eriksson <oeriksson@mandriva.com> 0.9.12-2mdv2011.0
 + Revision: 660275
 - mass rebuild
