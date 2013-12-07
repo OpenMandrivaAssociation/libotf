@@ -5,7 +5,7 @@
 Summary:        Library for handling OpenType fonts
 Name:           libotf
 Version:        0.9.13
-Release:        1
+Release:        2
 Group:		System/Internationalization
 License:	LGPLv2+
 Url:		http://www.m17n.org/libotf/
