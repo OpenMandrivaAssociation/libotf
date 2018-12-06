@@ -1,11 +1,11 @@
-%define	major	0
+%define	major	1
 %define	libname %mklibname otf %{major}
 %define	devname %mklibname -d otf
 
 Summary:        Library for handling OpenType fonts
 Name:           libotf
-Version:        0.9.13
-Release:        10
+Version:        0.9.16
+Release:        1
 Group:		System/Internationalization
 License:	LGPLv2+
 Url:		http://www.m17n.org/libotf/
