@@ -1,4 +1,2 @@
-removed_sources:
-  libotf-0.9.12.tar.gz: 47872f696a62e8f111960143f3f36b5366398e20
 sources:
-  libotf-0.9.13.tar.gz: 66bb81958f5f07ee1f8917d3cb7e359ae559d873
+  libotf-0.9.16.tar.gz: ee3037f468a5381de89846ee1c78320964cfbf78
