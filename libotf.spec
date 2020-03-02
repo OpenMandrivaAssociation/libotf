@@ -53,11 +53,11 @@ Headers of %{name} for development.
 %setup -q
 
 %build
-%configure2_5x --disable-static
-%make
+%configure --disable-static
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files tools
 %{_bindir}/otf*
@@ -71,4 +71,3 @@ Headers of %{name} for development.
 %{_includedir}/*
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/lib*.pc
-
