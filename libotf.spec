@@ -8,7 +8,7 @@ Version:        0.9.16
 Release:        2
 Group:		System/Internationalization
 License:	LGPLv2+
-Url:		http://www.m17n.org/libotf/
+Url:		https://www.m17n.org/libotf/
 Source0:	http://savannah.c3sl.ufpr.br/m17n/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(x11)
